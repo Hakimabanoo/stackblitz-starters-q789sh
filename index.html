@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookFinder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="page-top" class="bf-page-wrapper">
+      <!-- Header -->
+      <header class="bf-header-wrapper">
+        <div class="banner"></div>
+        <div class="container-fluid">
+          <div class="bf-main-nav">
+            <a href="#" class="mm-srch" onclick="searchBooks()">Search</a>
+            <a
+              href="https://www.bookfinder.com/my/preferences/?ref=bf_uu_hd_4"
+              class="an-pref"
+              >Preferences</a
+            >
+            <a
+              href="https://www.hotjar.com/blog/website-feedback/"
+              class="an-fhack"
+              >Feedback</a
+            >
+            <a
+              href="https://www.bookfinder.com/help/?ref=bf_uu_hd_6"
+              class="mm-help"
+              >Help</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <div class="bf-content-wrapper">
+        <div class="bf-content bf-home">
+          <div class="bf-content-inner">
+            <div class="container-fluid">
+              <h2>Compare Book Prices Online</h2>
+              <!-- Search Form -->
+              <form
+                id="search_form"
+                class="form-horizontal"
+                name="search_form"
+                action="/search_s/"
+                method="GET"
+                accept-charset="iso-8859-1"
+              >
+                <input
+                  type="text"
+                  id="book-query"
+                  name="query"
+                  placeholder="Enter book title, author, or ISBN"
+                  style="width: 100%; padding: 10px; margin: 10px 0"
+                />
+                <button type="button" class="button" onclick="searchBooks()">
+                  Search
+                </button>
+              </form>
+
+              <!-- Additional Info -->
+              <div>
+                <h3>Your Recent Searches</h3>
+                <p>No recent searches found.</p>
+              </div>
+
+              <div>
+                <h3>For Students</h3>
+                <p>
+                  Compare prices on new and used textbooks, rentals, old
+                  editions, and international editions.
+                </p>
+                <a href="/textbooks/" class="button" onclick="viewTextbooks()"
+                  >View Textbooks</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="bf-footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <h4>Find books with just one search</h4>
+              <p>
+                Since 1997, BookFinder has made it easy to find any book at the
+                best price. Whether you want the cheapest reading copy or a
+                specific collectible edition, BookFinder searches the
+                inventories of over 100,000 booksellers worldwide.
+              </p>
+              <div>
+                <a
+                  href="/about/conditions/"
+                  class="button"
+                  onclick="openConditions()"
+                  >Conditions of Use</a
+                >
+                <a href="/about/privacy/" class="button" onclick="openPrivacy()"
+                  >Privacy Policy</a
+                >
+                <a href="/help/" class="button" onclick="openHelp()">Help</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feedback Modal -->
+    <div id="feedbackModal" class="feedback-modal">
+      <div class="modal-content">
+        <h3>Provide Feedback</h3>
+        <label for="rating">Rating:</label>
+        <select id="rating">
+          <option value="5">⭐⭐⭐⭐⭐</option>
+          <option value="4">⭐⭐⭐⭐</option>
+          <option value="3">⭐⭐⭐</option>
+          <option value="2">⭐⭐</option>
+          <option value="1">⭐</option>
+        </select>
+        <textarea
+          id="feedbackText"
+          placeholder="Your feedback..."
+          style="width: 100%; padding: 10px; margin: 10px 0"
+        ></textarea>
+        <button id="submitFeedback">Submit</button>
+        <button id="closeModal">Close</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
